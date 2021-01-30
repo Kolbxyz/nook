@@ -113,4 +113,21 @@ $(document).ready(() => {
       $('#ver').text(' (dev)')
     }
   })
+
+  chrome.storage.local.get('patreonAnnouncementShown', result => {
+    if (result && result['patreonAnnouncementShown'] && result['patreonAnnouncementShown'] === 'true') return
+    $('.patreon_popup').removeAttr('style')
+    $('.main .header, .main .content').attr('style', 'display:none;')
+    chrome.storage.local.set({ 'patreonAnnouncementShown': 'true' })
+  })
+
+  $('#closePatreon').on('click', e => {
+    $('.patreon_popup').attr('style', 'display:none;')
+    $('.main .header, .main .content').removeAttr('style')
+  }).on('keydown', function (e) {
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault()
+      this.click()
+    }
+  })
 })

@@ -326,3 +326,19 @@ button.checkButtons {
 .supportersPage span {
   padding: 0 3px;
 }
+
+.patreon_popup {
+  position: relative;
+  background: white;
+  opacity: 1;
+  color: black;
+  font-weight: bold;
+  border-radius: 17px;
+  padding: 15px;
+  display: block;
+  z-index: 1;
+}
+
+.patreon_popup a {
+  color: black;
+}
