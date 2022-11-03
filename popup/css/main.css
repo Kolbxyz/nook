@@ -7,16 +7,26 @@ button#stateToggle[state="pause"] {
 }
 
 .thumbButton#github {
-  left: 9px;
+  top: 16px;
+  left: 12px;
   background-image: url(../images/github.png);
-  background-size: 20px;
+  background-size: 15px;
   background-repeat: no-repeat;
 }
 
 .thumbButton#patreon {
-  left: 45px;
+  top: 16px;
+  left: 38px;
   background-image: url(../images/patreon.png);
-  background-size: 20px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+}
+
+.thumbButton#reload {
+  top: 16px;
+  left: 64px;
+  background-image: url(../images/reload.png);
+  background-size: 15px;
   background-repeat: no-repeat;
 }
 
@@ -29,11 +39,16 @@ span.offscreen {
   font-weight: bold;
 }
 
+
+.thumbButton#stateToggle {
+  width: 30px;
+  height: 30px;
+}
 .thumbButton {
   border: none;
   background-color: #fff;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 5px;
   right: 9px;
   top: 10px;
@@ -254,15 +269,15 @@ a {
   font-weight: bold;
 }
 
-.kkSliderSonglistPage, .grandfatherModeHoursPage, .supportersPage {
+.kkSliderSonglistPage, .grandfatherModeHoursPage {
   display: none;
 }
 
-.kkSliderSonglistPage.active, .grandfatherModeHoursPage.active, .supportersPage.active {
+.kkSliderSonglistPage.active, .grandfatherModeHoursPage.active {
   display: block;
 }
 
-.kkSliderSonglistPage .content, .grandfatherModeHoursPage .content, .supportersPage.content {
+.kkSliderSonglistPage .content, .grandfatherModeHoursPage .content {
   text-align: unset;
 }
 
@@ -279,66 +294,4 @@ button.checkButtons {
 
 .kkSliderSonglistPage .content .buttonContainer, .grandfatherModeHoursPage .content .buttonContainer {
   text-align: center;
-}
-
-#supporters {
-  background-image: url(../images/white-sparkle.gif);
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #ffff3d !important;
-  display: block;
-  width: max-content;
-  margin-top: 12px;
-  margin-bottom: 10px;
-  margin-left: 39%;
-}
-
-.gold span {
-  background-image: url(../images/white-sparkle.gif);
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #d1ff96;
-}
-
-.silver span {
-  color: #dafaff;
-}
-
-.bronze span {
-  color: #ebbc8c;
-}
-.bronze {
-  margin-bottom: 18px;
-}
-
-.gold h2 {
-  color: #ffed00;
-}
-
-.silver h2 {
-  color: #baf5ff;
-}
-
-.bronze h2 {
-  color: #e7a968;
-}
-
-.supportersPage span {
-  padding: 0 3px;
-}
-
-.patreon_popup {
-  position: relative;
-  background: white;
-  opacity: 1;
-  color: black;
-  font-weight: bold;
-  border-radius: 17px;
-  padding: 15px;
-  display: block;
-  z-index: 1;
-}
-
-.patreon_popup a {
-  color: black;
 }
