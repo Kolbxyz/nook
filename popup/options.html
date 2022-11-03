@@ -9,17 +9,10 @@
     </head>
     <body>
         <div class="main">
-            <div class="patreon_popup" style="display:none;">
-                <h1>Hi!</h1>
-                <p>This is Mat, the creator of this extension. As you may know, I've been working on Nook for a couple of years now, and I've never tried to monetize it or make any money from it.</p>
-                <p>Last August, I was laid off from my job and I've been surviving off unemployment since then. Lately, the costs for hosting Nook's music files have been getting higher and higher, and I'm no longer able to host these files without support.</p>
-                <p>This announcement will only show one time, and the first tier of the Patreon is $1. If you're interested in helping me offset the costs of this extension, I would be forever thankful.</p>
-                <a href="https://patreon.com/mattu" target="_blank">Patreon Link</a><br>
-                <a id="closePatreon" role="button" href="#">Close</a>
-            </div>
             <div class="header">
                 <a id="github" class="thumbButton" href="https://github.com/mn6/nook" target="_blank" title="Visit the GitHub Repository"><span class="offscreen">Visit the GitHub Repository</span></a>
-                <a id="patreon" class="thumbButton" href="https://patreon.com/mattu" target="_blank" title="Visit my Patreon page"><span class="offscreen">Visit my Patreon page</span></a>
+                <a id="patreon" class="thumbButton" href="https://patreon.com/mattu" target="_blank" title="Support development"><span class="offscreen">Support development</span></a>
+                <a id="reload" class="thumbButton" href="#" title="Reload extension (use this if you have issues)"><span class="offscreen">Reload extension (use this if you have issues)</span></a>
                 <h1>Nook<span id="ver"></span></h1>
                 <button id="stateToggle" class="thumbButton" state="play" aria-label="Play/Pause" title="Play/Pause"></button>
             </div>
@@ -43,6 +36,7 @@
                     <option value="new-leaf-rainy">AC: New Leaf (3DS) [Rainy]</option>
                     <option value="new-leaf-snowy">AC: New Leaf (3DS) [Snowy]</option>
                     <option value="new-horizons">AC: New Horizons (Switch)</option>
+                    <option value="random">Random</option>
                 </select>
                 <label for="grandfather">Grandfather Mode (plays once per hour) <input type="checkbox" id="grandfather" aria-label="Grandfather Mode"></label>
                 <div id="grandfatherHoursDiv" class="hidden"><label><a role="button" href="#" id="grandfatherHoursToggle">Grandfather Mode Active Hours</a></label></div>
@@ -52,25 +46,6 @@
                     <option value="afterEight">From 8pm to 12am on Saturday</option>
                     <option value="never" selected>Never</option>
                 </select>
-                <a role="button" href="#" id="supporters">Supporters</a>
-            </div>
-        </div>
-        <div class="supportersPage">
-            <div class="header">
-                <h1>Patreon Supporters</h1>
-                <a class="back" href="#" role="button">Back</a>
-            </div>
-            <div class="content">
-                <p>🌟 Thank you to all Patreons for helping me out! 🌟 <br>Donate on Patreon to be featured here.</p>
-                <div class="gold">
-                    <h2>Gold Supporters</h2>
-                </div>
-                <div class="silver">
-                    <h2>Silver Supporters</h2>
-                </div>
-                <div class="bronze">
-                    <h2>Bronze Supporters</h2>
-                </div>
             </div>
         </div>
         <div class="kkSliderSonglistPage">
@@ -83,6 +58,8 @@
                     <button class="checkButtons" id="saveAllKK">Save</button>
                     <button class="checkButtons" id="checkAllKK">Check All</button>
                     <button class="checkButtons" id="uncheckAllKK">Uncheck All</button>
+                    <button class="checkButtons" id="airKK">Aircheck Only</button>
+                    <button class="checkButtons" id="liveKK">Live Only</button>
                 </div>
             </div>
         </div>

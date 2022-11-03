@@ -72,31 +72,20 @@ $(document).ready(() => {
   doOptionSetup('range', 'optionVolume', '#volume', 'volume', 1)
   doOptionSetup('range', 'optionRainVolume', '#rain', 'rainVolume', 0)
 
-  pages.push('.supportersPage')
-  $('#supporters').on('click', e => {
-    $('.supportersPage').addClass('active')
-    $('.main').addClass('hidden')
-  }).on('keydown', function (e) {
-    if (e.keyCode === 13 || e.keyCode === 32) {
-      e.preventDefault()
-      this.click()
-    }
+  $(`#airKK`).on('click', e => {
+    const chk = $(`label.kkCheckbox`)
+    chk.not(`:contains(Aircheck)`).find('input').prop('checked', false).change()
+    chk.filter(`:contains(Aircheck)`).find('input').prop('checked', true).change()
+  })
+  $(`#liveKK`).on('click', e => {
+    const chk = $(`label.kkCheckbox`)
+    chk.not(`:contains(Aircheck)`).find('input').prop('checked', true).change()
+    chk.filter(`:contains(Aircheck)`).find('input').prop('checked', false).change()
   })
 
-  fetch('https://tigs.i-like.blue/getPatrons')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-    let golds = data.gold.join('</span><span>')
-    let silvers = data.silver.join('</span><span>')
-    let bronzes = data.bronze.join('</span><span>')
-    if (golds.length < 1) golds = 'None yet!'
-    if (silvers.length < 1) silvers = 'None yet!'
-    if (bronzes.length < 1) bronzes = 'None yet!'
-    $('.gold h2').after('<span>' + golds + '</span>');
-    $('.silver h2').after('<span>' + silvers + '</span>');
-    $('.bronze h2').after('<span>' + bronzes + '</span>');
-  });
+  $('#reload').on('click', e => {
+    chrome.runtime.reload();
+  })
 
   $('.back').on('click', e => {
     $(pages.join(', ')).removeClass('active')
@@ -111,23 +100,6 @@ $(document).ready(() => {
   chrome.management.getSelf(res => {
     if (res.installType === 'development') {
       $('#ver').text(' (dev)')
-    }
-  })
-
-  chrome.storage.local.get('patreonAnnouncementShown', result => {
-    if (result && result['patreonAnnouncementShown'] && result['patreonAnnouncementShown'] === 'true') return
-    $('.patreon_popup').removeAttr('style')
-    $('.main .header, .main .content').attr('style', 'display:none;')
-    chrome.storage.local.set({ 'patreonAnnouncementShown': 'true' })
-  })
-
-  $('#closePatreon').on('click', e => {
-    $('.patreon_popup').attr('style', 'display:none;')
-    $('.main .header, .main .content').removeAttr('style')
-  }).on('keydown', function (e) {
-    if (e.keyCode === 13 || e.keyCode === 32) {
-      e.preventDefault()
-      this.click()
     }
   })
 })

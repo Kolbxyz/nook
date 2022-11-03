@@ -12,6 +12,18 @@ const baseURL = 'https://d17orwheorv96d.cloudfront.net'
 const gmDefaultHours = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
 let gmHours = gmDefaultHours
 
+// Game list
+const gameList = [
+  'population-growing',
+  'wild-world',
+  'wild-world-rainy',
+  'wild-world-snowy',
+  'new-leaf',
+  'new-leaf-rainy',
+  'new-leaf-snowy',
+  'new-horizons'
+]
+
 // Fades
 const fade = 500
 
@@ -103,7 +115,7 @@ function pauseSound () {
 function playSound (name, hour, kk) {
   if (sound) sound.unload()
   if (raining) playRain()
-  let thisGame = game
+  let thisGame = game === 'random' ? gameList[~~(Math.random() * gameList.length)] : game;
   if (kk) thisGame = 'kk-slider'
   sound = new Howl({
     src: [`${baseURL}/${thisGame}/${!kk && grandfatherMode ? 'full/' : ''}${name}.ogg`],
@@ -117,7 +129,8 @@ function playSound (name, hour, kk) {
   name = name.replace('.mp3', '')
   nowPlaying = name
   if(!kk) {
-    gameSplit = game.toLowerCase().split('-');
+    if (thisGame.includes('wild-world')) thisGame = thisGame.replace('wild-world', 'city-folk')
+    gameSplit = thisGame.toLowerCase().split('-');
     for (var i = 0; i < gameSplit.length; i++) {
       gameSplit[i] = (i == 2 ? "[" : "")+gameSplit[i].charAt(0).toUpperCase() + gameSplit[i].slice(1)+(i == 2 ? "]" : "");
     }
