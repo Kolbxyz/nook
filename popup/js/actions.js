@@ -1,4 +1,7 @@
 $(document).ready(() => {
+  $('.patreon_popup').removeAttr('style')
+  $('.main .header, .main .content').attr('style', 'display:none;')
+
   function nowPlaying (state) {
     if (state === 'play') {
       chrome.runtime.sendMessage({ 'getNowPlaying': 'pls' }) 

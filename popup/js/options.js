@@ -96,6 +96,16 @@ $(document).ready(() => {
       this.click()
     }
   })
+  
+  $('#closePatreon').on('click', e => {
+    $('.patreon_popup').attr('style', 'display:none;')
+    $('.main .header, .main .content').removeAttr('style')
+  }).on('keydown', function (e) {
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault()
+      this.click()
+    }
+  })
 
   chrome.management.getSelf(res => {
     if (res.installType === 'development') {
