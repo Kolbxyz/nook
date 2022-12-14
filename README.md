@@ -1,5 +1,7 @@
-![Nook Banner](https://i.imgur.com/7FZCuXZ.jpg)
 # Nook
+
+Moved to https://github.com/mn6/nook-desktop
+
 Nook is a simple Chrome/Firefox extension that plays the music and hourly themes found in Animal Crossing in real-time. 
 
 **[Chrome Store Link](https://chrome.google.com/webstore/detail/nook/gndfjlldkaonpbpdagdnpgobcbgcpdah)** | **[Firefox Store Link](https://addons.mozilla.org/en-US/firefox/addon/nook/)** | **[Patreon Link](https://patreon.com/mattu)**
